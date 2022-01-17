@@ -3,7 +3,8 @@ const port =8085;
 
 function requestHandler(req,res){
     console.log(req.url);
-    res.end("Have a nice day !");
+    res.writeHead(200,{'content-type':'text/html'});
+    res.end("<h4>Have a nice day !</h4>");
 }
 
 const server=http.createServer(requestHandler);
