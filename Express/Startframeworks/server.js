@@ -12,7 +12,7 @@ app.get('/',(req,res)=>{
     // res.send('<h2>Cool, it is running !</h2>');
 
     return res.render('home',{
-        title:'First ejs page );'
+        title:'First ejs page !'
     });
 })
 
