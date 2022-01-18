@@ -5,25 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= locals.title%></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
-  <h2>Contact List</h2>
+  <h2 id="page-heading"><i class='far fa-comment-alt' style='font-size:36px'></i>  My Contact List</h2>
 
-  <ul>
+<center>
+  <table border="1"  cellspacing="1" cellsapcing="1" width="200px">
+  <ul id="contact-list">
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+    </tr>
       <% for(let i of contact_list){%>
-        <li>
-            <p><%=i.name%></p>
-            <p><%=i.phone%></p>
-      </li>
-        <%
+       
+           
+            <tr>
+                <td><%=i.name%></td>
+                <td><%=i.phone%></td>
+            </tr>
+        
+         <%
       }%>
-  </ul>
-
-  <form action="/create-contact" method="post">
+</ul>
+</table>
+</center>
+<center>
+  <table cellspacing="1" cellsapcing="1">
+    <form action="/create-contact" method="post">
       <input type="text" name="name" placeholder="Enter Name" required>
       <input type="text" name="phone" placeholder="Enter Number" required>
       <button id="submit">Add Contact</button>
 
   </form>
+  </table>
+  </center>
+  <script src="/js/home.js"></script>
 </body>
 </html>

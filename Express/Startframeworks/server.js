@@ -7,7 +7,9 @@ const app=express();
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 app.use(express.urlencoded());
+app.use(express.static('assets'));
 
+/*
 //middleware1
 app.use((req,res,next)=>{
     req.name="Aperna";
@@ -20,20 +22,21 @@ app.use((req,res,next)=>{
     console.log("myname from MW 2:",req.name);
     next();
 })
-
+*/
 
 var contactList=[
+    
      {name:'sundar',phone:8870829330},
-     {name:'Manisha',phone:283932330},
-     {name:'Kumar',phone:1239438403},
-     {name:'kamala',phone:29383920},
+     {name:'Manisha',phone:8870829330},
+     {name:'Kumar',phone:8870829330},
+     {name:'kamala',phone:8870829330},
 ]
 
 
 app.get('/',(req,res)=>{
     // console.log(req);
     // res.send('<h2>Cool, it is running !</h2>');
-    console.log(req.name)
+   // console.log(req.name)
 
     return res.render('home',{
         title:'First ejs page !',
