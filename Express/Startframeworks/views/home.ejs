@@ -18,13 +18,13 @@
     <tr>
       <th>Name</th>
       <th>Phone Number</th>
+      <th>Delete</th>
     </tr>
       <% for(let i of contact_list){%>
-       
-           
-            <tr>
+             <tr>
                 <td><%=i.name%></td>
                 <td><%=i.phone%></td>
+                <td><a href="/delete-contact/?phone=<%= i.phone %>"><i class='fas fa-archive' style='font: size 40px;;color:red'></i></a></td>
             </tr>
         
          <%
