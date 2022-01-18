@@ -7,6 +7,16 @@
     <title><%= locals.title%></title>
 </head>
 <body>
-    Rendered  Ejs  Data ! 
+  <h2>Contact List</h2>
+
+  <ul>
+      <% for(let i of contact_list){%>
+        <li>
+            <p><%=i.name%></p>
+            <p><%=i.phone%></p>
+      </li>
+        <%
+      }%>
+  </ul>
 </body>
 </html>
