@@ -8,6 +8,19 @@ app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 app.use(express.urlencoded());
 
+//middleware1
+app.use((req,res,next)=>{
+    req.name="Aperna";
+   // console.log("middleware 1 called");
+    next();
+})
+//middleware2
+app.use((req,res,next)=>{
+    //console.log("middleware 2 called");
+    console.log("myname from MW 2:",req.name);
+    next();
+})
+
 
 var contactList=[
      {name:'sundar',phone:8870829330},
@@ -20,6 +33,7 @@ var contactList=[
 app.get('/',(req,res)=>{
     // console.log(req);
     // res.send('<h2>Cool, it is running !</h2>');
+    console.log(req.name)
 
     return res.render('home',{
         title:'First ejs page !',
