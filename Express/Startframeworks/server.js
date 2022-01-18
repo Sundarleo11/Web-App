@@ -4,6 +4,7 @@ const port=8081;
 const app=express();
 
 app.get('/',(req,res)=>{
+    console.log(req);
     res.send('<h2>Cool, it is running !</h2>');
 })
 
