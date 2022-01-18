@@ -1,11 +1,17 @@
 const express=require('express');
+const path=require('path');
 const port=8081;
 
 const app=express();
 
+app.set('view engine','ejs');
+// app.set('views',path.join(__dirname,'views'));
+
 app.get('/',(req,res)=>{
-    console.log(req);
-    res.send('<h2>Cool, it is running !</h2>');
+    // console.log(req);
+    // res.send('<h2>Cool, it is running !</h2>');
+
+    return res.render('home');
 })
 
 app.listen(port,(err,data)=>{
