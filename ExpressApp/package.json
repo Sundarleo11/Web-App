@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "nothing",
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "run": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/Sundarleo11/Web-App#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
   }
 }
