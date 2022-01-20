@@ -2,6 +2,7 @@ const express=require('express');
 const path=require('path');
 const port=8081;
 const db=require('./config/mongoose');
+const { find } = require('./model/Contact');
 const Contact=require('./model/Contact');
 
 const app=express();
@@ -88,8 +89,8 @@ app.post('/create-contact',(req,res)=>{
 
 app.get('/delete-contact/',(req,res)=>{
     //console.log(req.params);
-    console.log(req.query);
-    let phone=req.query.phone;
+  //  console.log(req.query);
+  ///  let phone=req.query.phone;
 
     // let contactIndex=contactList.findIndex(contact=>contact.phone==phone);
 
@@ -98,12 +99,23 @@ app.get('/delete-contact/',(req,res)=>{
     // }
 
 
-    let contactindex = contactList.findIndex(contact => contact.phone == phone);
+    // let contactindex = contactList.findIndex(contact => contact.phone == phone);
 
-    if(contactindex != -1){
-        contactList.splice(contactindex, 1);
-    }
-    return res.redirect('back');
+    // if(contactindex != -1){
+    //     contactList.splice(contactindex, 1);
+
+   
+
+  //  }
+   // to get id from url
+     let id=req.query.id;
+     Contact.findByIdAndDelete(id,function(err){
+         if(err){
+             console.log("err in delete the id");
+         }
+         return res.redirect('back');
+     })
+    
 
 })
 

@@ -10,7 +10,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
-  <h2 id="page-heading"><i class='far fa-comment-alt' style='font-size:36px'></i>  My Contact List</h2>
+  <h2 id="page-heading"><i class="fas fa-id-card-alt"></i> My Contact List</h2>
 
 <center>
   <table border="1"  cellspacing="1" cellsapcing="1" width="200px">
@@ -24,7 +24,7 @@
              <tr>
                 <td><%=i.name%></td>
                 <td><%=i.phone%></td>
-                <td><a href="/delete-contact/?phone=<%= i.phone %>"><i class='fas fa-archive' style='font: size 40px;;color:red'></i></a></td>
+                <td><a href="/delete-contact/?id=<%= i._id %>"><i class="fas fa-user-times"></i></a></td>
             </tr>
         
          <%
