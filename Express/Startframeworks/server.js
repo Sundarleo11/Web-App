@@ -39,11 +39,17 @@ app.get('/',(req,res)=>{
     // console.log(req);
     // res.send('<h2>Cool, it is running !</h2>');
    // console.log(req.name)
-
-    return res.render('home',{
-        title:'First ejs page !',
-        contact_list:contactList//nameing convesion
-    });
+    Contact.find({},function(err,contact){
+        if(err){
+            console.log("err on while fetching the contact");
+            return;
+        }
+        return res.render('home',{
+            title:'First ejs page !',
+            contact_list:contact//nameing convesion
+        });
+    })
+    
 })
 
 
