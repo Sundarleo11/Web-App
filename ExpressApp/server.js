@@ -4,7 +4,9 @@ const app=express();
 
 //Added router for customer any request
 app.use('/',require('./router'));
-
+//setup the views engine
+app.set('view engine','ejs');
+app.set('views', './views');
 app.listen(port,function(err){
     if(err){
         console.log(`error on server port:${port}`);
