@@ -48,7 +48,7 @@ app.use(passport.session());
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(passport.setAuthenticatedUser);
 
 //Added router for customer any request
 app.use('/',require('./router'));
