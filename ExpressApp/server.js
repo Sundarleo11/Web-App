@@ -6,6 +6,13 @@ const cookies=require('cookie-parser');
 const DB=require('./Config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
 
+//session cookiess
+const passport=require('passport');
+const passport_local=require('./Config/passport_local_startegy');
+const session=require('express-session');
+
+
+
 
 app.use(express.urlencoded());
 app.use(cookies());
@@ -19,13 +26,32 @@ app.set('layout extractScripts', true);
 
 
 
-
-//Added router for customer any request
-app.use('/',require('./router'));
-
 //setup the views engine
 app.set('view engine','ejs');
 app.set('views', './views');
+
+
+app.use(session({
+    name: 'ExpressApp',
+    // TODO change the secret before deployment in production mode
+    secret: 'blahsomething',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+//Added router for customer any request
+app.use('/',require('./router'));
 
 
 app.listen(port,function(err){
