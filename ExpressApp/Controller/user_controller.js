@@ -58,3 +58,9 @@ module.exports.createSession=function(req,res){
     //ToDo later
     return res.redirect('/');
 }
+
+module.exports.destorySession=function(req,res){
+    req.logout();
+
+    return res.redirect('/');
+}
