@@ -85,9 +85,13 @@ Startframework(commit:Http resquest)
 Step 1: to analaysis what kind of request we are using ?(console.log(req))
 
 Get-------->To get the data
+
 Post------->To post the data
+
 put--------> To fill exactly field data
+
 patch------>To exchange one field data into othere data.
+
 Delete----->To delete one field data.
 
 Still now. M V C, control part had completed. Then view part
@@ -131,8 +135,11 @@ Step 1: created contactList and rendered from ejs home page.
 Startframework(commit:urlencode)
 -----------------------------------
 Step 1: created post method with two field, as name and phone.
-step 2:now communication clicent--->parse--->json formate(sended:avascript, received:json)
+
+step 2:now communication clicent--->parse--->json formate(sended:javascript, received:json)
+
 step 3:Then reverse Enginner method. Need add urlencode
+
 step 4: To stroage name, phone value, then push too form.
 
 Start The framework(commit:middleware)
