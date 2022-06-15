@@ -1,0 +1,39 @@
+{
+  "name": "expressapp",
+  "version": "1.0.0",
+  "description": "Fisrt express app",
+  "main": "server.js",
+  "scripts": {
+    "test": "nothing",
+    "start": "nodemon server.js",
+    "run": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sundarleo11/Web-App.git"
+  },
+  "keywords": [
+    "Express",
+    "App"
+  ],
+  "author": "sundar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sundarleo11/Web-App/issues"
+  },
+  "homepage": "https://github.com/Sundarleo11/Web-App#readme",
+  "dependencies": {
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "^1.4.6",
+    "cookies-parser": "^1.2.0",
+    "ejs": "^3.1.8",
+    "express": "^4.17.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.1.7",
+    "node-sass-middleware": "^1.0.1",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  }
+}

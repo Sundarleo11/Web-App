@@ -1,0 +1,17 @@
+body{
+    background-color: lightblue;
+   /* text-align: center;*/
+}
+
+#page-heading{
+      margin-top: 25px;
+      text-align: center;
+      font-family: sans-serif;
+      color: gray;
+}
+#contact-list{
+    font-family: sans-serif;
+    color: gray;
+    
+}
+
