@@ -6,5 +6,15 @@
 <body>
     <!--<h1>My Express App/<%= title%></h1>-->
     <h1>Home</h1>
+
+    <section id="feed-post">
+        <form action="/post/create" method="post" id="new-post-form">
+            <h4>Posts</h4>
+            <textarea name="content" cols="30" rows="3" placeholder="Type Here"></textarea>
+            <input type="submit" value="Post">
+
+        </form>
+
+    </section>
 </body>
 </html>
