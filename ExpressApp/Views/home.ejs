@@ -16,5 +16,26 @@
         </form>
 
     </section>
+    <div id="post-list-container">
+        <ul>
+            <% for(post of posts){
+
+                %>
+                <li>
+                  <%=  post.content %>
+                  <small>
+                    <%=  post.user%>
+                  </small>
+                </li>
+                
+                <%
+
+            }
+         
+            
+            %>
+        </ul>
+
+    </div>
 </body>
 </html>
