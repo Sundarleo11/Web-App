@@ -7,17 +7,17 @@ const postSchema = new mongoose.Schema({
         required: true
     },
     user: {
-        type:  mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
 
     },
     comments: [{
-        type:  mongoose.Schema.Types.ObjectId,
-        ref: 'comments'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
 
     }
-]
-},{
+    ]
+}, {
     timestamps: true
 });
 

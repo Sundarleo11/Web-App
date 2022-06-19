@@ -30,7 +30,7 @@
                   <%=  post.user.name %>
                   </small>
                 </p>
-                <div id="post-comment">
+                <div class="post-comment">
                     <% if(locals.user) {
                         %>
                         <form action="/comments/create" method="post">
@@ -47,16 +47,26 @@
                         
                     }%>
 
+                    <div class="post-comments-list">
+                        <ul id="post-comments-<%= post._id %>">
+                            <% for (comment of post.comments){%>
+                                
+                            <p>
+                                <%= comment.content %>
+                                <br>
+                                <small>
+                                    <%= comment.user.name %>
+                                </small>
+                            </p>    
+                            <%} %>
+                        </ul>
+                    </div>
+
                 </div>
                 
                 </li>
                 
-                <%
-
-            }
-         
-            
-            %>
+                <% } %>
         </ul>
 
     </div>
