@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Sundarleo11/Web-App#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "connect-mongo": "^2.0.3",
     "cookie-parser": "^1.4.6",
     "cookies-parser": "^1.2.0",

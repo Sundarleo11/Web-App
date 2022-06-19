@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <title><%= title%></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   
 </head>
 <body>
     <!--<h1>My Express App/<%= title%></h1>-->
@@ -12,7 +16,8 @@
         <form action="/post/create" method="post" id="new-post-form">
             <h4>Posts</h4>
             <textarea name="content" cols="30" rows="3" placeholder="Type Here"></textarea>
-            <input type="submit" value="Post">
+            <button style='font-size:12px;color:hsl(120, 4%, 11%)'><i class='fab fa-blogger-b'>Post</i></button>
+            
       
         </form>
         <% } %>
@@ -22,61 +27,7 @@
             <% for(post of posts){
 
                 %>
-                <li>
-                   
-                    <p>
-                        <% if(locals.user && locals.user.id==post.user.id){%>
-                        <small>
-                            <a href="/post/destroy/<%=post.id%>">X</a>
-                        </small>
-                        <%}%>
-                  <%=  post.content %>
-                  <br>
-                  <small>
-                  <%=  post.user.name %>
-                  </small>
-                </p>
-                <div class="post-comment">
-                    <% if(locals.user) {
-                        %>
-                        <form action="/comments/create" method="post">
-                            <input type="text" name="content" placeholder="Add comment Here..">
-                            <input type="hidden" name="post" value="<%= post._id %>" >
-                            <input type="submit" value="Add comment">
-
-
-
-                        </form>
-                        
-                        
-                        <%
-                        
-                    }%>
-
-                    <div class="post-comments-list">
-                        <ul id="post-comments-<%= post._id %>">
-                            <% for (comment of post.comments){%>
-                                
-                            <p>
-                                <% if(locals.user && locals.user.id==comment.user.id){%>
-                                    <small>
-                                        <a href="/comments/destroy/<%= comment.id %>">X</a>
-                                    </small>
-                                    <%}%>
-
-                                <%= comment.content %>
-                                <br>
-                                <small>
-                                    <%= comment.user.name %>
-                                </small>
-                            </p>    
-                            <%} %>
-                        </ul>
-                    </div>
-
-                </div>
-                
-                </li>
+               <%-include('post')-%>
                 
                 <% } %>
         </ul>
