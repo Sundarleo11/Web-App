@@ -6,6 +6,7 @@ router.get('/sign_in', Controller.signin);
 router.get('/sign_up', Controller.signup);
 
 router.get('/profile/:id', passport.checkAuthentication, Controller.profile);
+router.post('/update/:id', passport.checkAuthentication, Controller.update);
 
 router.post('/create', Controller.create);
 
