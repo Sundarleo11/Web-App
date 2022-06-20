@@ -21,17 +21,32 @@
       
         </form>
         <% } %>
+
+        <div id="post-list-container">
+            <ul>
+                <% for(post of posts){
+    
+                    %>
+                   <%-include('post')-%>
+                    
+                    <% } %>
+            </ul>
+    
+        </div>
     </section>
-    <div id="post-list-container">
-        <ul>
-            <% for(post of posts){
+    <section id="user-friend">
+        <h4>Friends</h4>
+        <% for(u of all_user){%>
+            <p>
+                <a href="/user/profile/<%=u.id%>"><%=u.name%></a>
+            </p>
+            
+        <%}
+        
+        
+        %>
+    </section>
+  
 
-                %>
-               <%-include('post')-%>
-                
-                <% } %>
-        </ul>
-
-    </div>
 </body>
 </html>
