@@ -1,0 +1,24 @@
+#home-container {
+  display: flex;
+}
+
+#home-container #feed-post {
+  width: 70%;
+  padding: 10px;
+}
+
+#home-container #user-friend {
+  width: 30%;
+  padding: 10px;
+  border-left: 1px solid lightgrey;
+  max-height: 100%;
+}
+
+#home-container h4 {
+  text-decoration: underline;
+}
+
+#home-container a {
+  text-decoration: none;
+  color: #140202;
+}

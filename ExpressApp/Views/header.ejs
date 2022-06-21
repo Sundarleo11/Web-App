@@ -11,7 +11,7 @@
         <div class="auth-links">
             <ul>
                 <%if(locals.user){%>
-                    <li><a href="/user/profile"><%= user.name%></a></li>
+                    <li><a href="/user/profile/<%=u.id%>"><%= user.name%></a></li>
                    
                    <li><a href="/user/signout">sign out</a></li> 
                     <%}else{

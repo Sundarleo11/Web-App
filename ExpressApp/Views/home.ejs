@@ -1,52 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
+
     <title><%= title%></title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-   
-</head>
-<body>
-    <!--<h1>My Express App/<%= title%></h1>-->
-    <h1>Home</h1>
+    <header>
+     <link rel="stylesheet" href="/css/home.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+ </header>
+ 
+ 
+     <div id="home-container">
+         <!--<h1>My Express App/<%= title%></h1> <h1>Home</h1>-->
+     
+ 
+     <section id="feed-post">
+       <h4>Posts</h4>
+         <% if(locals.user){ %>
+         <form action="/post/create" method="post" id="new-post-form">
+             <textarea name="content" cols="30" rows="3" placeholder="Type Here"></textarea>
+             <button style='font-size:12px;color:hsl(120, 4%, 11%)'><i class='fab fa-blogger-b'>Post</i></button>
+             
+       
+         </form>
+         <% } %>
+ 
+         <div id="post-list-container">
+             <ul>
+                 <% for(post of posts){
+     
+                     %>
+                    <%-include('post')-%>
+                     
+                     <% } %>
+             </ul>
+     
+         </div>
+     </section>
+     <section id="user-friend">
+         <h4>Friends</h4>
+         <% for(u of all_user){%>
+             <p >
+                 <a href="/user/profile/<%=u.id%>"><%=u.name%>
+                     <i class="fa fa-address-book-o" style="font-size:14px;color:rgb(212, 0, 255)"></i>
+                 </a>
+             </p>
+             
+         <%}
+         
+         
+         %>
+     </section>
+     </div>
 
-    <section id="feed-post">
-        <% if(locals.user){ %>
-        <form action="/post/create" method="post" id="new-post-form">
-            <h4>Posts</h4>
-            <textarea name="content" cols="30" rows="3" placeholder="Type Here"></textarea>
-            <button style='font-size:12px;color:hsl(120, 4%, 11%)'><i class='fab fa-blogger-b'>Post</i></button>
-            
-      
-        </form>
-        <% } %>
 
-        <div id="post-list-container">
-            <ul>
-                <% for(post of posts){
-    
-                    %>
-                   <%-include('post')-%>
-                    
-                    <% } %>
-            </ul>
-    
-        </div>
-    </section>
-    <section id="user-friend">
-        <h4>Friends</h4>
-        <% for(u of all_user){%>
-            <p>
-                <a href="/user/profile/<%=u.id%>"><%=u.name%></a>
-            </p>
-            
-        <%}
-        
-        
-        %>
-    </section>
-  
 
-</body>
-</html>
